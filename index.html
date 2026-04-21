@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE Main ~38K — College & Branch Guide (Non-JoSAA)</title>
+<style>
+  :root{--bg:#0f0e17;--surface:#1a1a2e;--surface2:#222244;--accent:#7f5af0;--accent2:#2cb67d;--warn:#f39c12;--danger:#e74c3c;--text:#fffffe;--text2:#94a1b2;--border:#333366}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  .sidebar{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:20px 0;z-index:100}
+  .sidebar h2{font-size:12px;color:var(--accent);padding:0 20px;margin:16px 0 8px;text-transform:uppercase;letter-spacing:1px}
+  .sidebar a{display:block;padding:7px 20px;color:var(--text2);text-decoration:none;font-size:13px;transition:all .2s;border-left:3px solid transparent}
+  .sidebar a:hover,.sidebar a.active{color:var(--text);background:rgba(127,90,240,.1);border-left-color:var(--accent)}
+  .sidebar .logo{padding:16px 20px;font-size:16px;font-weight:800;color:var(--text);border-bottom:1px solid var(--border);margin-bottom:10px}
+  .sidebar .profile-card{margin:12px 16px;padding:12px;background:var(--surface2);border-radius:8px;font-size:12px}
+  .sidebar .profile-card .label{color:var(--text2)}
+  .sidebar .profile-card .value{color:var(--accent2);font-weight:700;font-size:14px}
+  .main{margin-left:260px;padding:30px 40px 60px;max-width:1100px}
+  h1{font-size:26px;font-weight:800;margin-bottom:6px}
+  h2{font-size:20px;font-weight:700;color:var(--accent);margin:36px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+  h3{font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--accent2)}
+  h4{font-size:12px;font-weight:600;color:var(--text2);margin:12px 0 6px;text-transform:uppercase;letter-spacing:.5px}
+  p{color:var(--text2);margin-bottom:10px;font-size:14px}
+  ul,ol{padding-left:20px;margin-bottom:10px;color:var(--text2);font-size:14px}
+  li{margin-bottom:3px}
+  strong{color:var(--text)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:13px}
+  th{background:var(--surface2);color:var(--accent);text-align:left;padding:9px 10px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0}
+  td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+  tr:hover td{background:rgba(127,90,240,.05)}
+  td:first-child{color:var(--text);font-weight:600}
+  .v-safe{background:#1a3a2a;color:#2cb67d;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+  .v-border{background:#3a2a1a;color:#f39c12;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+  .v-stretch{background:#3a2a1a;color:#e67e22;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+  .v-out{background:#3a1a1a;color:#e74c3c;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+  .v-top{background:#2a1a3a;color:#7f5af0;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+  .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-right:3px}
+  .tag-govt{background:#1a3a2a;color:#2cb67d}
+  .tag-pvt{background:#3a2a1a;color:#f39c12}
+  .tag-semi{background:#2a1a3a;color:#7f5af0}
+  .callout{background:var(--surface2);border-left:4px solid var(--accent);padding:14px 18px;margin:14px 0;border-radius:0 8px 8px 0}
+  .callout.warn{border-left-color:var(--warn)}
+  .callout.green{border-left-color:var(--accent2)}
+  .callout.danger{border-left-color:var(--danger)}
+  .callout p{margin-bottom:6px}
+  .callout p:last-child{margin-bottom:0}
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+  .card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;transition:border-color .2s}
+  .card:hover{border-color:var(--accent)}
+  .card h4{color:var(--text);font-size:14px;margin-bottom:6px;text-transform:none;letter-spacing:0}
+  .card .meta{font-size:12px;color:var(--text2)}
+  .card .stat{font-size:18px;font-weight:800;color:var(--accent)}
+  .section{scroll-margin-top:20px}
+  .updated{font-size:11px;color:var(--text2);background:var(--surface2);padding:4px 10px;border-radius:4px;display:inline-block;margin-top:4px}
+  .admission-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;margin:10px 0}
+  .admission-box h4{color:var(--accent2);margin-bottom:6px}
+  .link-btn{display:inline-block;background:var(--accent);color:white;padding:4px 12px;border-radius:4px;font-size:12px;font-weight:600;margin:3px 3px 3px 0;text-decoration:none}
+  .link-btn:hover{opacity:.9;text-decoration:none}
+  .link-btn.secondary{background:var(--surface2);color:var(--accent);border:1px solid var(--accent)}
+  @media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:16px}}
+  ::-webkit-scrollbar{width:6px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+  .fee{color:var(--accent2);font-weight:600}
+  .deadline{color:var(--warn);font-weight:600;font-size:12px}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="logo">🎯 JEE ~38K Guide</div>
+  <div class="profile-card">
+    <div class="label">JEE Main Rank</div><div class="value">~38,000</div>
+    <div class="label" style="margin-top:6px">Board %</div><div class="value">72% (Agg: 60%)</div>
+    <div class="label" style="margin-top:6px">Category</div><div class="value">General</div>
+    <div class="label" style="margin-top:6px">Scope</div><div class="value">Non-JoSAA Only</div>
+  </div>
+  <h2>Overview</h2>
+  <a href="#profile">Profile & Constraints</a>
+  <a href="#strategy">Strategy</a>
+  <a href="#board-pct">Board % Matrix</a>
+  <h2>Delhi NCR — Govt</h2>
+  <a href="#jac-delhi">JAC Delhi (DTU/NSUT/IIITD)</a>
+  <a href="#ipu">IPU (GGSIPU)</a>
+  <h2>Delhi NCR — Private</h2>
+  <a href="#jiit">JIIT Noida</a>
+  <a href="#bennett">Bennett University</a>
+  <a href="#amity">Amity University</a>
+  <a href="#srm-ncr">SRM NCR / Galgotias / Sharda</a>
+  <a href="#aktu">AKTU Colleges (KIET/ABES/GL Bajaj)</a>
+  <h2>Outside NCR</h2>
+  <a href="#thapar">Thapar Patiala</a>
+  <a href="#pec">PEC Chandigarh</a>
+  <a href="#lpu">LPU / Chitkara / UPES</a>
+  <a href="#manipal">Manipal / VIT / SRM Chennai</a>
+  <h2>State Counselling</h2>
+  <a href="#state">UP / Haryana / Other States</a>
+  <h2>Analysis</h2>
+  <a href="#comparisons">Head-to-Head</a>
+  <a href="#priority-list">Priority List</a>
+  <a href="#placements">Placement Reality</a>
+  <a href="#timeline">Application Timeline</a>
+  <a href="#todos">Research TODOs</a>
+</nav>
+
+<div class="main">
+
+<h1>JEE Main Rank ~38K — Complete College Guide</h1>
+<p>Non-JoSAA options only. Delhi NCR focus + best national alternatives. With admission process, fees, dependencies, and links.</p>
+<span class="updated">Last updated: April 21, 2026 · Data: 2024–25 admission cycles</span>
+
+<!-- PROFILE -->
+<section class="section" id="profile">
+<h2>Student Profile & Key Constraints</h2>
+<div class="card-grid">
+  <div class="card"><h4>JEE Main Rank</h4><div class="stat">~38,000</div><div class="meta">CRL · General · ~96.5 percentile</div></div>
+  <div class="card"><h4>Board %</h4><div class="stat">72%</div><div class="meta">Aggregate: 60%</div></div>
+  <div class="card"><h4>Key Blocker</h4><div class="stat">75% Rule</div><div class="meta">JoSAA & JAC need 75% or top 20 percentile</div></div>
+  <div class="card"><h4>Best Path</h4><div class="stat">IPU + Private</div><div class="meta">No board % barrier at these</div></div>
+</div>
+</section>
+
+<!-- BOARD % -->
+<section class="section" id="board-pct">
+<h2>Board Percentage Eligibility Matrix</h2>
+<table>
+  <tr><th>Counselling / College</th><th>Board Req</th><th>Eligible?</th><th>Action Needed</th></tr>
+  <tr><td>JoSAA (NITs/IIITs)</td><td>75% or top 20%ile</td><td><span class="v-border">⚠️ CHECK</span></td><td>Check board's 20th percentile. If ≤72%, eligible. <strong>Not covered in this guide.</strong></td></tr>
+  <tr><td>JAC Delhi (DTU/NSUT/IIITD)</td><td>75% or top 20%ile</td><td><span class="v-border">⚠️ CHECK</span></td><td>Same rule. Tight for CBSE (~72–75% is the 20th %ile).</td></tr>
+  <tr><td>IPU (GGSIPU)</td><td>~60% aggregate</td><td><span class="v-safe">✅ YES</span></td><td>No barrier.</td></tr>
+  <tr><td>JIIT Noida</td><td>No hard cutoff</td><td><span class="v-safe">✅ YES</span></td><td>Apply directly.</td></tr>
+  <tr><td>Bennett University</td><td>No hard cutoff</td><td><span class="v-safe">✅ YES</span></td><td>Apply directly.</td></tr>
+  <tr><td>Amity / SRM / Galgotias</td><td>50–60% varies</td><td><span class="v-safe">✅ YES</span></td><td>All clear.</td></tr>
+  <tr><td>AKTU (UP State)</td><td>45% PCM</td><td><span class="v-safe">✅ YES</span></td><td>Very lenient.</td></tr>
+  <tr><td>Thapar Patiala</td><td>60% aggregate</td><td><span class="v-safe">✅ YES</span></td><td>Apply directly.</td></tr>
+  <tr><td>PEC Chandigarh</td><td>60% PCM</td><td><span class="v-safe">✅ YES</span></td><td>Uses JEE Main + own counselling.</td></tr>
+  <tr><td>Manipal / VIT / SRM</td><td>No JEE needed</td><td><span class="v-safe">✅ YES</span></td><td>Own entrance exams. JEE score optional.</td></tr>
+</table>
+</section>
+
+<!-- STRATEGY -->
+<section class="section" id="strategy">
+<h2>Strategy</h2>
+<div class="callout green">
+  <p><strong>Apply to ALL of these in parallel:</strong></p>
+  <ol>
+    <li><strong>IPU CET</strong> — register + appear for CET (backup if JEE score not accepted)</li>
+    <li><strong>JAC Delhi</strong> — register (if board 20th percentile check passes)</li>
+    <li><strong>JIIT Noida</strong> — direct application, negotiate scholarship with JEE rank</li>
+    <li><strong>Bennett</strong> — direct application</li>
+    <li><strong>Thapar</strong> — online application</li>
+    <li><strong>VIT / Manipal / SRM</strong> — own exams (VITEEE, MET, SRMJEEE)</li>
+    <li><strong>AKTU / state counselling</strong> — safety net</li>
+  </ol>
+</div>
+</section>
+
+<!-- ============ JAC DELHI ============ -->
+<section class="section" id="jac-delhi">
+<h2>JAC Delhi — DTU / NSUT / IIIT-Delhi / IGDTUW</h2>
+<p><span class="tag tag-govt">GOVT</span> Joint Admission Committee for Delhi govt-funded universities.</p>
+
+<div class="callout warn">
+  <p><strong>⚠️ Eligibility:</strong> 75% Class 12 OR top 20 percentile of board. With 72%, check your board's 20th percentile. CBSE's is ~72–75% — very tight.</p>
+  <p><strong>⚠️ Delhi quota:</strong> 85% seats for Delhi domicile. OSD (Outside Delhi) gets 15% — cutoffs much higher.</p>
+</div>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Register on JAC Delhi portal (June–July typically)</li>
+    <li>JEE Main rank used for merit — no separate exam</li>
+    <li>Online choice filling → counselling rounds (4–5 rounds)</li>
+    <li>Document verification + fee payment after allotment</li>
+  </ol>
+  <p><strong>Dependencies:</strong> Valid JEE Main rank + board % eligibility + domicile certificate (for Delhi quota)</p>
+  <a href="https://jacdelhi.admissions.nic.in" target="_blank" class="link-btn">JAC Delhi Portal</a>
+  <a href="https://dtu.ac.in" target="_blank" class="link-btn secondary">DTU Website</a>
+  <a href="https://nsut.ac.in" target="_blank" class="link-btn secondary">NSUT Website</a>
+  <a href="https://iiitd.ac.in" target="_blank" class="link-btn secondary">IIIT-Delhi</a>
+</div>
+
+<h3>Delhi Quota (if Delhi domicile)</h3>
+<table>
+  <tr><th>Institute</th><th>Branch</th><th>Closing Rank (Delhi, GN)</th><th>Verdict @38K</th></tr>
+  <tr><td>DTU</td><td>CSE</td><td>3,000–4,500</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>IT</td><td>5,000–7,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>Software Engg</td><td>10,000–14,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>Mathematics & Computing</td><td>7,000–9,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>ECE</td><td>8,000–12,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>Electrical (EE/EP)</td><td>18,000–25,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>Mechanical</td><td>25,000–35,000</td><td><span class="v-stretch">🔶 STRETCH</span></td></tr>
+  <tr><td>DTU</td><td>Civil / Environmental</td><td>35,000–50,000</td><td><span class="v-border">⚠️ POSSIBLE</span></td></tr>
+  <tr><td>DTU</td><td>BioTech / Polymer</td><td>40,000–55,000</td><td><span class="v-safe">✅ SAFE</span></td></tr>
+  <tr><td>NSUT</td><td>CSE</td><td>4,000–5,500</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>NSUT</td><td>IT / CSAI / CIOT</td><td>6,000–10,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>NSUT</td><td>ECE</td><td>10,000–15,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>NSUT</td><td>Mech / Instru</td><td>30,000–50,000</td><td><span class="v-border">⚠️ POSSIBLE</span></td></tr>
+  <tr><td>NSUT East Campus</td><td>CSE / IT / CSDS</td><td>18,000–30,000</td><td><span class="v-stretch">🔶 STRETCH</span></td></tr>
+  <tr><td>NSUT West Campus</td><td>CSE / IT</td><td>22,000–35,000</td><td><span class="v-border">⚠️ BORDERLINE</span></td></tr>
+  <tr><td>IIIT-Delhi</td><td>CSE</td><td>5,000–8,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>IIIT-Delhi</td><td>ECE / CSAM</td><td>8,000–12,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+</table>
+
+<h3>Outside Delhi (OSD) — 15% seats only</h3>
+<table>
+  <tr><th>Institute</th><th>Branch</th><th>Closing Rank (OSD, GN)</th><th>Verdict</th></tr>
+  <tr><td>DTU</td><td>CSE / IT</td><td>1,500–3,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>DTU</td><td>Any branch</td><td>3,000–20,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>NSUT</td><td>Any branch</td><td>2,000–15,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+  <tr><td>NSUT East/West</td><td>CSE / IT</td><td>8,000–15,000</td><td><span class="v-out">❌ OUT</span></td></tr>
+</table>
+
+<div class="callout danger">
+  <p><strong>JAC Delhi Summary at 38K:</strong> CSE/IT/ECE → ❌ everywhere. With Delhi quota: DTU Mech (stretch), DTU/NSUT Civil/BioTech (possible), NSUT West CSE (borderline). Without Delhi quota: nothing feasible.</p>
+</div>
+</section>
+
+<!-- ============ IPU ============ -->
+<section class="section" id="ipu">
+<h2>IPU — GGSIPU (Guru Gobind Singh Indraprastha University)</h2>
+<p><span class="tag tag-govt">STATE GOVT</span> <strong>No 75% board requirement. 60% aggregate sufficient.</strong> Best govt option at this profile.</p>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li><strong>IPU CET</strong> — university's own entrance exam (May–June). Primary admission mode.</li>
+    <li>Some colleges accept <strong>JEE Main score directly</strong> — check each college's policy</li>
+    <li>Online counselling (July–August) — 3-4 rounds</li>
+    <li>85% Delhi domicile quota / 15% outside Delhi</li>
+  </ol>
+  <p><strong>Dependencies:</strong> IPU CET registration (separate from JEE). ₹1,200 application fee. JEE score is secondary.</p>
+  <p class="deadline">⏰ IPU CET registration typically opens March–April. Check immediately.</p>
+  <a href="https://ipu.admissions.nic.in" target="_blank" class="link-btn">IPU Admissions Portal</a>
+  <a href="http://www.ipu.ac.in" target="_blank" class="link-btn secondary">IPU Main Site</a>
+</div>
+
+<table>
+  <tr><th>Institute</th><th>Branch</th><th>JEE Rank Range (approx)</th><th>Fees/yr</th><th>Verdict @38K</th><th>Notes</th></tr>
+  <tr><td><strong>USICT</strong> (Univ School of ICT)</td><td>CSE / IT</td><td>15,000–25,000</td><td class="fee">₹1.5L</td><td><span class="v-stretch">🔶 STRETCH</span></td><td>Best IPU college. CSE probably out at 38K. Try IT.</td></tr>
+  <tr><td>USICT</td><td>ECE</td><td>30,000–45,000</td><td class="fee">₹1.5L</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>ECE at USICT is worth it — great campus, good placements.</td></tr>
+  <tr><td><strong>MAIT</strong> (Maharaja Agrasen)</td><td>CSE</td><td>25,000–38,000</td><td class="fee">₹1.7L</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>Top IPU affiliated. Rohini. Strong placements.</td></tr>
+  <tr><td>MAIT</td><td>IT</td><td>28,000–42,000</td><td class="fee">₹1.7L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>IT slightly easier than CSE, same placements.</td></tr>
+  <tr><td>MAIT</td><td>AI & ML</td><td>30,000–45,000</td><td class="fee">₹1.7L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Newer branch, lower cutoff.</td></tr>
+  <tr><td><strong>MSIT</strong> (Maharaja Surajmal)</td><td>CSE / IT</td><td>25,000–40,000</td><td class="fee">₹1.5L</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>Janakpuri. Good reputation.</td></tr>
+  <tr><td><strong>BPIT</strong> (Bhagwan Parshuram)</td><td>CSE / IT</td><td>30,000–45,000</td><td class="fee">₹1.7L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Rohini. Decent placements.</td></tr>
+  <tr><td><strong>BVCOE</strong> (BV College of Engg)</td><td>CSE / IT</td><td>30,000–45,000</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Paschim Vihar. Established.</td></tr>
+  <tr><td><strong>GTBIT</strong> (Guru Tegh Bahadur)</td><td>CSE / IT</td><td>35,000–50,000</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Rajouri Garden.</td></tr>
+  <tr><td><strong>ADGITM</strong></td><td>CSE</td><td>40,000–55,000</td><td class="fee">₹1.7L</td><td><span class="v-safe">✅ SAFE</span></td><td>Accessible CSE.</td></tr>
+  <tr><td><strong>HMRITM</strong></td><td>CSE / IT</td><td>40,000–55,000</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ SAFE</span></td><td>Delhi govt funded. No mgmt quota.</td></tr>
+  <tr><td><strong>AITH</strong> (Ambedkar IHIT)</td><td>CSE</td><td>35,000–48,000</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Govt aided.</td></tr>
+  <tr><td><strong>DITE</strong> (Delhi Inst of Tool Engg)</td><td>CSE</td><td>45,000–60,000</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ SAFE</span></td><td>Safety option.</td></tr>
+</table>
+
+<div class="callout green">
+  <p><strong>💡 IPU Sweet Spots at ~38K:</strong> MAIT IT/AI&ML, BPIT CSE, BVCOE CSE, GTBIT CSE. All ₹1.5–1.7L/yr, all in Delhi, all have decent placement cells. IPU CET registration is the critical action item.</p>
+</div>
+</section>
+
+<!-- ============ JIIT ============ -->
+<section class="section" id="jiit">
+<h2>JIIT Noida — Jaypee Institute of IT</h2>
+<p><span class="tag tag-pvt">PRIVATE</span> <span class="tag tag-semi">DEEMED</span> NAAC A++ · Est. 2001 · Noida Sector 62 + 128</p>
+
+<div class="callout green">
+  <p><strong>🔥 Best private option in NCR at this rank range.</strong> Strong placements (Amazon, Samsung, Adobe, Paytm). Modern campus. 38K JEE rank qualifies for scholarship negotiation.</p>
+</div>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Apply on JIIT website (online application)</li>
+    <li>Merit based on <strong>JEE Main rank/percentile</strong> — primary criteria</li>
+    <li>No separate entrance exam</li>
+    <li>Direct admission offers with scholarship tiers based on JEE rank</li>
+    <li>Confirm via fee payment (partial refundable if you withdraw by deadline)</li>
+  </ol>
+  <p><strong>Board %:</strong> No hard cutoff. Must have passed 12th with Physics, Chemistry, Maths.</p>
+  <p><strong>Fees:</strong> <span class="fee">₹3.5L–₹4L/year</span> (before scholarship). With 38K JEE: expect 10–25% scholarship.</p>
+  <p class="deadline">⏰ Applications typically open Feb–July. Multiple rounds.</p>
+  <a href="https://www.jiit.ac.in/prospective-student/admission/admission-procedures" target="_blank" class="link-btn">JIIT Admissions</a>
+  <a href="https://www.jiit.ac.in" target="_blank" class="link-btn secondary">JIIT Website</a>
+</div>
+
+<table>
+  <tr><th>Branch</th><th>Seats</th><th>JEE Rank for Admission</th><th>Verdict</th><th>Placement Median</th></tr>
+  <tr><td>CSE</td><td>~300</td><td>Accepts broadly; merit-ranked</td><td><span class="v-safe">✅ YES</span></td><td>9–12 LPA</td></tr>
+  <tr><td>CSE (AI & ML)</td><td>~120</td><td>Same pool, slightly lower demand</td><td><span class="v-safe">✅ YES</span></td><td>8–11 LPA</td></tr>
+  <tr><td>IT</td><td>~180</td><td>Slightly easier than CSE</td><td><span class="v-safe">✅ YES</span></td><td>8–10 LPA</td></tr>
+  <tr><td>ECE</td><td>~180</td><td>More accessible</td><td><span class="v-safe">✅ YES</span></td><td>6–8 LPA</td></tr>
+  <tr><td>Biotechnology</td><td>~60</td><td>Very accessible</td><td><span class="v-safe">✅ YES</span></td><td>4–6 LPA</td></tr>
+</table>
+</section>
+
+<!-- ============ BENNETT ============ -->
+<section class="section" id="bennett">
+<h2>Bennett University — Greater Noida</h2>
+<p><span class="tag tag-pvt">PRIVATE</span> Times Group backed · Est. 2016 · NAAC A · Greater Noida</p>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Apply on Bennett website</li>
+    <li>Accepts: <strong>JEE Main score</strong>, <strong>Bennett Aptitude Test (BAT)</strong>, or <strong>board marks</strong></li>
+    <li>Best of available scores used for merit ranking</li>
+    <li>Scholarship based on JEE/BAT percentile</li>
+    <li>Rolling admissions — multiple rounds</li>
+  </ol>
+  <p><strong>Board %:</strong> No hard cutoff. Pass in PCM required.</p>
+  <p><strong>Fees:</strong> <span class="fee">₹4.5L–₹5L/year</span> (before scholarship). 38K JEE may get 15–30% waiver.</p>
+  <a href="https://www.bennett.edu.in/admission/" target="_blank" class="link-btn">Bennett Admissions</a>
+  <a href="https://www.bennett.edu.in" target="_blank" class="link-btn secondary">Bennett Website</a>
+</div>
+
+<table>
+  <tr><th>Branch</th><th>Verdict</th><th>Fees</th><th>Notes</th></tr>
+  <tr><td>CSE</td><td><span class="v-safe">✅ YES</span></td><td class="fee">₹4.5L/yr</td><td>Flagship. Good labs, industry connections via Times Group network.</td></tr>
+  <tr><td>CSE (Data Science)</td><td><span class="v-safe">✅ YES</span></td><td class="fee">₹4.5L/yr</td><td>DS specialization growing in demand.</td></tr>
+  <tr><td>CSE (AI & ML)</td><td><span class="v-safe">✅ YES</span></td><td class="fee">₹4.5L/yr</td><td>Popular newer branch.</td></tr>
+  <tr><td>ECE</td><td><span class="v-safe">✅ YES</span></td><td class="fee">₹4.5L/yr</td><td>Smaller batch. Decent placements.</td></tr>
+  <tr><td>Mechanical / Civil</td><td><span class="v-safe">✅ YES</span></td><td class="fee">₹4L/yr</td><td>Less competitive.</td></tr>
+</table>
+</section>
+
+<!-- ============ AMITY ============ -->
+<section class="section" id="amity">
+<h2>Amity University — Noida</h2>
+<p><span class="tag tag-pvt">PRIVATE</span> UGC recognized · Massive campus · Est. 2005</p>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Apply online on Amity portal</li>
+    <li>Accepts: <strong>Amity JEE</strong> (own exam) OR <strong>JEE Main score</strong> — best used for scholarship</li>
+    <li>Group discussion + interview for some programs</li>
+    <li>Rolling admissions year-round</li>
+  </ol>
+  <p><strong>Board %:</strong> 60% minimum in Class 12.</p>
+  <p><strong>Fees:</strong> <span class="fee">₹3.5L–₹5L/year</span> (branch dependent). JEE rank 38K → possible 20–40% scholarship.</p>
+  <a href="https://www.amity.edu/admissions/" target="_blank" class="link-btn">Amity Admissions</a>
+  <a href="https://www.amity.edu" target="_blank" class="link-btn secondary">Amity Website</a>
+</div>
+
+<table>
+  <tr><th>Branch</th><th>Verdict</th><th>Notes</th></tr>
+  <tr><td>CSE</td><td><span class="v-safe">✅ YES</span></td><td>Large intake. Variable quality — top students do very well (15+ LPA), average is 5–6 LPA.</td></tr>
+  <tr><td>CSE (AI & ML / Data Science / Cyber)</td><td><span class="v-safe">✅ YES</span></td><td>Multiple specializations available. All accessible.</td></tr>
+  <tr><td>IT</td><td><span class="v-safe">✅ YES</span></td><td>Slightly less popular than CSE.</td></tr>
+  <tr><td>ECE / EEE</td><td><span class="v-safe">✅ YES</span></td><td>Very accessible.</td></tr>
+</table>
+
+<div class="callout warn">
+  <p><strong>Amity Reality:</strong> Brand recognition is high but placement outcomes are bimodal — top 20% do great, rest get service companies. Self-effort matters more here than at JIIT/Bennett. Negotiate hard on fees.</p>
+</div>
+</section>
+
+<!-- ============ SRM/GAL/SHARDA ============ -->
+<section class="section" id="srm-ncr">
+<h2>SRM NCR / Galgotias / Sharda — Greater Noida Belt</h2>
+<p><span class="tag tag-pvt">PRIVATE</span> Greater Noida region colleges</p>
+
+<table>
+  <tr><th>Institute</th><th>Branch</th><th>Fees/yr</th><th>Admission</th><th>Board %</th><th>Verdict</th><th>Notes</th></tr>
+  <tr>
+    <td><strong>SRM IST NCR</strong></td><td>CSE / IT</td><td class="fee">₹3.5L</td>
+    <td>JEE Main / SRMJEEE</td><td>No hard cutoff</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>NCR campus of SRM. Not Chennai-level but decent. <a href="https://www.srmist.edu.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>Galgotias University</strong></td><td>CSE / IT / AI</td><td class="fee">₹2L–₹3.5L</td>
+    <td>JEE / Own exam (GEEE)</td><td>No hard cutoff</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Large campus. Mixed reviews. Very self-effort dependent. <a href="https://www.galgotiasuniversity.edu.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>Sharda University</strong></td><td>CSE / IT</td><td class="fee">₹2.5L–₹3.5L</td>
+    <td>JEE / Own exam</td><td>No hard cutoff</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>International campus. Variable placements. <a href="https://www.sharda.ac.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>GD Goenka</strong></td><td>CSE</td><td class="fee">₹3L–₹4L</td>
+    <td>JEE Main score</td><td>No hard cutoff</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Gurugram. Growing. <a href="https://www.gdgoenkauniversity.com" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>Manav Rachna (MRIIRS)</strong></td><td>CSE / AI&ML</td><td class="fee">₹2.5L–₹3L</td>
+    <td>JEE Main accepted</td><td>No hard cutoff</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Faridabad. NAAC A++. Decent for its tier. <a href="https://manavrachna.edu.in" target="_blank">Website</a></td>
+  </tr>
+</table>
+</section>
+
+<!-- ============ AKTU ============ -->
+<section class="section" id="aktu">
+<h2>AKTU Colleges — KIET / ABES / GL Bajaj / JSS</h2>
+<p><span class="tag tag-pvt">PRIVATE</span> <span class="tag tag-semi">AKTU AFFILIATED</span> UP state technical university colleges</p>
+
+<div class="admission-box">
+  <h4>📋 Admission Process (Common for all AKTU)</h4>
+  <ol>
+    <li>Register on <strong>UPSEE/AKTU counselling portal</strong></li>
+    <li>JEE Main rank used for merit (UPSEE exam discontinued — JEE Main is now the only exam)</li>
+    <li>Online choice filling → counselling rounds</li>
+    <li>Management quota seats available at some colleges (direct admission, higher fees)</li>
+  </ol>
+  <p><strong>Board %:</strong> 45% in PCM (very lenient). Your 72% is well above.</p>
+  <p class="deadline">⏰ AKTU counselling: July–August typically.</p>
+  <a href="https://aktu.ac.in" target="_blank" class="link-btn">AKTU Website</a>
+</div>
+
+<table>
+  <tr><th>Institute</th><th>Location</th><th>Branch</th><th>Fees/yr</th><th>Verdict</th><th>Notes</th></tr>
+  <tr><td><strong>KIET Group</strong></td><td>Ghaziabad</td><td>CSE / IT</td><td class="fee">₹1.5L–₹2L</td><td><span class="v-safe">✅ YES</span></td><td>Among best AKTU colleges. Autonomous status. Good placements for tier. <a href="https://www.kiet.edu" target="_blank">Website</a></td></tr>
+  <tr><td><strong>ABES Engg College</strong></td><td>Ghaziabad</td><td>CSE / IT</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ YES</span></td><td>Established. Consistent placements. <a href="https://www.abes.ac.in" target="_blank">Website</a></td></tr>
+  <tr><td><strong>GL Bajaj</strong></td><td>Greater Noida</td><td>CSE / IT / AI</td><td class="fee">₹1.5L–₹2L</td><td><span class="v-safe">✅ YES</span></td><td>Good among AKTU. Affordable. <a href="https://www.glbitm.org" target="_blank">Website</a></td></tr>
+  <tr><td><strong>JSS Noida</strong></td><td>Noida</td><td>CSE / IT</td><td class="fee">₹1.5L–₹2L</td><td><span class="v-safe">✅ YES</span></td><td>Decent option. <a href="https://www.jssaten.ac.in" target="_blank">Website</a></td></tr>
+  <tr><td><strong>IMS Engg College</strong></td><td>Ghaziabad</td><td>CSE</td><td class="fee">₹1.2L–₹1.5L</td><td><span class="v-safe">✅ SAFE</span></td><td>Budget option. Decent track record.</td></tr>
+  <tr><td><strong>NIET</strong></td><td>Greater Noida</td><td>CSE / IT</td><td class="fee">₹1.5L</td><td><span class="v-safe">✅ SAFE</span></td><td>Multiple branches available.</td></tr>
+</table>
+
+<div class="callout">
+  <p><strong>AKTU Reality:</strong> Affordable (₹1.2–2L/yr), decent for mass recruiters. Median placement 4–6 LPA. Not glamorous but good ROI if budget is a concern. KIET and ABES are the best of this lot.</p>
+</div>
+</section>
+
+<!-- ============ THAPAR ============ -->
+<section class="section" id="thapar">
+<h2>Thapar Institute — Patiala, Punjab</h2>
+<p><span class="tag tag-semi">DEEMED</span> NAAC A++ · UGC recognized · Est. 1956 · Among the best private-ish options nationally</p>
+
+<div class="callout green">
+  <p><strong>🔥 Thapar is arguably the best non-govt option for this profile.</strong> Older than most NITs, excellent alumni network, strong placements (median 9–11 LPA for CSE). Considered at par with mid-tier NITs.</p>
+</div>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Apply on Thapar website</li>
+    <li>Merit based on <strong>JEE Main rank</strong> — primary criteria for B.Tech</li>
+    <li>Online counselling + choice filling</li>
+    <li>Multiple rounds (July–August)</li>
+  </ol>
+  <p><strong>Board %:</strong> 60% aggregate in Class 12. ✅ You qualify.</p>
+  <p><strong>Fees:</strong> <span class="fee">₹3.5L–₹4L/year</span></p>
+  <p><strong>Location:</strong> Patiala, Punjab (~4.5 hrs from Delhi by road/train)</p>
+  <a href="https://www.thapar.edu" target="_blank" class="link-btn">Thapar Website</a>
+  <a href="https://www.thapar.edu/admissions" target="_blank" class="link-btn secondary">Admissions</a>
+</div>
+
+<table>
+  <tr><th>Branch</th><th>JEE Closing Rank (approx)</th><th>Verdict</th><th>Placement</th></tr>
+  <tr><td>CSE</td><td>25,000–35,000</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>10–13 LPA median</td></tr>
+  <tr><td>CSE (AI & ML / DS)</td><td>30,000–40,000</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>9–12 LPA</td></tr>
+  <tr><td>COE (Computer Engg)</td><td>28,000–38,000</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>9–11 LPA</td></tr>
+  <tr><td>ECE</td><td>40,000–55,000</td><td><span class="v-safe">✅ SAFE</span></td><td>7–9 LPA</td></tr>
+  <tr><td>EE / Civil / Mech</td><td>50,000–80,000</td><td><span class="v-safe">✅ VERY SAFE</span></td><td>5–7 LPA</td></tr>
+</table>
+</section>
+
+<!-- ============ PEC ============ -->
+<section class="section" id="pec">
+<h2>PEC Chandigarh — Punjab Engineering College</h2>
+<p><span class="tag tag-govt">DEEMED GOVT</span> Est. 1921 · One of India's oldest engineering colleges · NAAC A</p>
+
+<div class="admission-box">
+  <h4>📋 Admission Process</h4>
+  <ol>
+    <li>Admission through <strong>JEE Main rank</strong> (for outside UT Chandigarh candidates)</li>
+    <li>UT Chandigarh domicile gets 50% reservation</li>
+    <li>Separate counselling (not JoSAA, not JAC) — PEC's own process</li>
+    <li>Application on PEC website → counselling rounds</li>
+  </ol>
+  <p><strong>Board %:</strong> 60% in PCM. ✅ You qualify.</p>
+  <p><strong>Fees:</strong> <span class="fee">₹2.5L–₹3L/year</span> (deemed university — slightly higher than NIT)</p>
+  <p><strong>Location:</strong> Chandigarh (beautiful campus, great city)</p>
+  <a href="https://pec.ac.in" target="_blank" class="link-btn">PEC Website</a>
+</div>
+
+<table>
+  <tr><th>Branch</th><th>JEE Closing Rank (non-UT, GN)</th><th>Verdict</th><th>Notes</th></tr>
+  <tr><td>CSE</td><td>18,000–25,000</td><td><span class="v-out">❌ OUT</span></td><td>Very competitive.</td></tr>
+  <tr><td>IT (if offered)</td><td>22,000–30,000</td><td><span class="v-stretch">🔶 STRETCH</span></td><td>Check if branch exists.</td></tr>
+  <tr><td>ECE</td><td>30,000–42,000</td><td><span class="v-border">⚠️ BORDERLINE</span></td><td>Good ECE program. Worth trying.</td></tr>
+  <tr><td>Electrical</td><td>40,000–55,000</td><td><span class="v-safe">✅ SAFE</span></td><td>Solid option at old, reputed college.</td></tr>
+  <tr><td>Mech / Civil</td><td>45,000–65,000</td><td><span class="v-safe">✅ SAFE</span></td><td>Core branches accessible.</td></tr>
+</table>
+</section>
+
+<!-- ============ LPU/CHITKARA/UPES ============ -->
+<section class="section" id="lpu">
+<h2>LPU / Chitkara / UPES</h2>
+
+<table>
+  <tr><th>Institute</th><th>Location</th><th>Admission</th><th>Board %</th><th>Fees/yr</th><th>CSE Verdict</th><th>Notes</th><th>Link</th></tr>
+  <tr>
+    <td><strong>LPU</strong> (Lovely Professional)</td><td>Phagwara, Punjab</td>
+    <td>LPUNEST / JEE Main</td><td>No hard cutoff</td><td class="fee">₹2L–₹3L</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Massive campus. Good for exposure. Placement variable. Scholarship on JEE.</td>
+    <td><a href="https://www.lpu.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>Chitkara University</strong></td><td>Rajpura, Punjab</td>
+    <td>Own exam / JEE</td><td>No hard cutoff</td><td class="fee">₹2.5L–₹3.5L</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Strong industry tie-ups. Good for placement-focused students.</td>
+    <td><a href="https://www.chitkara.edu.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>UPES</strong></td><td>Dehradun</td>
+    <td>Own exam (UPESEAT) / JEE</td><td>No hard cutoff</td><td class="fee">₹3L–₹4.5L</td>
+    <td><span class="v-safe">✅ YES</span></td>
+    <td>Energy focus historically. CSE growing fast. Nice campus. Scholarship on JEE.</td>
+    <td><a href="https://www.upes.ac.in" target="_blank">Website</a></td>
+  </tr>
+</table>
+</section>
+
+<!-- ============ VIT/MANIPAL/SRM ============ -->
+<section class="section" id="manipal">
+<h2>VIT / Manipal / SRM Chennai — National Options</h2>
+<p>Top private universities. Own entrance exams. JEE score gives scholarship leverage even if not required for admission.</p>
+
+<table>
+  <tr><th>Institute</th><th>Location</th><th>Exam</th><th>Fees/yr</th><th>CSE Cutoff</th><th>Notes</th><th>Link</th></tr>
+  <tr>
+    <td><strong>VIT Vellore</strong></td><td>Vellore, TN</td>
+    <td>VITEEE (own exam)</td><td class="fee">₹3.5L–₹5L</td>
+    <td>Top 15K in VITEEE for CSE Vellore</td>
+    <td>🔥 Best private for placements. Median 8–12 LPA (CSE). Excellent infra. <strong>Apply for VITEEE.</strong></td>
+    <td><a href="https://vit.ac.in" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>VIT Chennai / AP / Bhopal</strong></td><td>Various</td>
+    <td>VITEEE</td><td class="fee">₹2.5L–₹4L</td>
+    <td>More accessible than Vellore</td>
+    <td>Satellite campuses. Easier cutoff. Still VIT brand.</td>
+    <td><a href="https://chennai.vit.ac.in" target="_blank">Chennai</a></td>
+  </tr>
+  <tr>
+    <td><strong>Manipal IT (MIT)</strong></td><td>Manipal, Karnataka</td>
+    <td>MET (own exam)</td><td class="fee">₹4L–₹5.5L</td>
+    <td>Top 20K in MET for CSE</td>
+    <td>Premium private. Excellent campus + placements. Apply for MET.</td>
+    <td><a href="https://manipal.edu" target="_blank">Website</a></td>
+  </tr>
+  <tr>
+    <td><strong>SRM IST Chennai</strong></td><td>Chennai</td>
+    <td>SRMJEEE (own exam)</td><td class="fee">₹3L–₹4.5L</td>
+    <td>Top 10K SRMJEEE for CSE</td>
+    <td>Main campus is strong. Good placements. Multiple branches.</td>
+    <td><a href="https://www.srmist.edu.in" target="_blank">Website</a></td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p><strong>💡 Key point:</strong> VIT, Manipal, SRM have their own exams (VITEEE, MET, SRMJEEE). Apply for these separately — they don't require JEE Main. Your JEE rank helps with scholarships even if you get in through their own exams. <strong>Apply to all three.</strong></p>
+</div>
+</section>
+
+<!-- ============ STATE COUNSELLING ============ -->
+<section class="section" id="state">
+<h2>State Counselling — UP / Haryana / Other</h2>
+
+<h3>UP (AKTU) — Already covered above</h3>
+<p>JEE Main rank is the sole admission criteria since UPSEE was discontinued. Counselling via AKTU portal.</p>
+
+<h3>Haryana (HSTES)</h3>
+<div class="admission-box">
+  <h4>📋 Process</h4>
+  <ol>
+    <li>Register on HSTES portal</li>
+    <li>JEE Main rank used for merit</li>
+    <li>Haryana domicile gets state quota; General open to all</li>
+    <li>Covers: NIT Kurukshetra (HS quota), DCRUST Murthal, YMCA Faridabad, GJU Hisar, MDU Rohtak affiliates</li>
+  </ol>
+  <p><strong>Board %:</strong> 45% PCM (lenient)</p>
+  <a href="https://hstes.org.in" target="_blank" class="link-btn">HSTES Portal</a>
+</div>
+
+<table>
+  <tr><th>College</th><th>Branch</th><th>Verdict @38K</th><th>Notes</th></tr>
+  <tr><td>DCRUST Murthal</td><td>CSE / IT</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Deemed univ. Good for Haryana students. Fees ~₹1L/yr.</td></tr>
+  <tr><td>YMCA Faridabad</td><td>CSE / IT</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>Faridabad (NCR). Govt-aided. Low fees.</td></tr>
+  <tr><td>GJU S&T Hisar</td><td>CSE</td><td><span class="v-safe">✅ SAFE</span></td><td>Haryana state university.</td></tr>
+  <tr><td>UIET MDU Rohtak</td><td>CSE</td><td><span class="v-safe">✅ POSSIBLE</span></td><td>University dept. Low fees (~₹80K/yr).</td></tr>
+</table>
+
+<h3>Other States Worth Exploring</h3>
+<table>
+  <tr><th>State</th><th>Counselling</th><th>Key Colleges</th><th>Notes</th></tr>
+  <tr><td>Rajasthan</td><td>REAP</td><td>MNIT (HS quota), Govt Engg Colleges</td><td>If Rajasthan domicile, HS quota at MNIT Jaipur is valuable.</td></tr>
+  <tr><td>MP</td><td>DTE MP</td><td>RGPV affiliates, IIITDM Jabalpur</td><td>If MP domicile.</td></tr>
+  <tr><td>Uttarakhand</td><td>UKTECH</td><td>DIT Dehradun (now GEHU), Graphic Era</td><td>Dehradun colleges.</td></tr>
+</table>
+</section>
+
+<!-- ============ HEAD TO HEAD ============ -->
+<section class="section" id="comparisons">
+<h2>Head-to-Head Comparisons</h2>
+<table>
+  <tr><th>Option A</th><th>Option B</th><th>Winner</th><th>Why</th></tr>
+  <tr><td>JIIT Noida CSE</td><td>Bennett CSE</td><td><strong>JIIT</strong></td><td>Older (2001 vs 2016), better alumni network, proven placements, lower fees.</td></tr>
+  <tr><td>JIIT Noida CSE</td><td>MAIT (IPU) CSE</td><td><strong>Depends</strong></td><td>JIIT = better placements + brand. MAIT = 60% cheaper (₹1.7L vs ₹4L). Budget → MAIT. ROI → JIIT.</td></tr>
+  <tr><td>Thapar CSE (AI&ML)</td><td>JIIT Noida CSE</td><td><strong>Thapar</strong></td><td>Stronger brand nationally. Better alumni. NIT-equivalent. Worth leaving NCR for.</td></tr>
+  <tr><td>Amity CSE</td><td>KIET CSE</td><td><strong>KIET</strong></td><td>KIET is cheaper, placement outcomes similar, no marketing fluff. Amity overpriced for avg outcomes.</td></tr>
+  <tr><td>PEC ECE</td><td>JIIT CSE</td><td><strong>Depends on goal</strong></td><td>PEC = older brand, Chandigarh campus, semi-govt. JIIT = CSE branch, NCR location. Close call.</td></tr>
+  <tr><td>VIT Vellore CSE</td><td>JIIT Noida CSE</td><td><strong>VIT Vellore</strong></td><td>VIT placements are stronger nationally. But far from NCR. If location doesn't matter → VIT.</td></tr>
+  <tr><td>Thapar CSE</td><td>VIT Chennai CSE</td><td><strong>Thapar</strong></td><td>VIT Chennai is satellite. Thapar main campus > VIT Chennai. VIT Vellore would be different.</td></tr>
+  <tr><td>BPIT (IPU) CSE</td><td>GL Bajaj CSE</td><td><strong>BPIT</strong></td><td>IPU > AKTU in brand. Delhi location. Similar fees.</td></tr>
+  <tr><td>DTU Mech (Delhi)</td><td>JIIT CSE</td><td><strong>JIIT CSE</strong></td><td>CSE placements >>> Mech placements. DTU brand doesn't compensate for branch gap.</td></tr>
+</table>
+</section>
+
+<!-- ============ PRIORITY LIST ============ -->
+<section class="section" id="priority-list">
+<h2>Recommended Priority List</h2>
+
+<div class="callout green">
+  <p><strong>Ranked by: placement outcome × affordability × location.</strong> CSE-related branches only unless noted.</p>
+</div>
+
+<h3>Tier A — Top Picks (apply to ALL)</h3>
+<ol>
+  <li><strong>Thapar — CSE / CSE (AI&ML) / COE</strong> — best overall option if you can leave NCR</li>
+  <li><strong>JIIT Noida — CSE</strong> — best NCR private</li>
+  <li><strong>VIT Vellore — CSE</strong> (via VITEEE) — best national private</li>
+  <li><strong>Manipal MIT — CSE</strong> (via MET) — premium placement</li>
+</ol>
+
+<h3>Tier B — Strong Options</h3>
+<ol start="5">
+  <li><strong>MAIT (IPU) — CSE / IT / AI&ML</strong> — best NCR govt option</li>
+  <li><strong>Bennett — CSE</strong> — if scholarship makes fees reasonable</li>
+  <li><strong>MSIT (IPU) — CSE / IT</strong></li>
+  <li><strong>PEC Chandigarh — ECE</strong> — old, reputed, govt</li>
+  <li><strong>BPIT (IPU) — CSE</strong></li>
+  <li><strong>SRM Chennai — CSE</strong> (via SRMJEEE)</li>
+</ol>
+
+<h3>Tier C — Solid Safety</h3>
+<ol start="11">
+  <li><strong>BVCOE (IPU) — CSE</strong></li>
+  <li><strong>GTBIT (IPU) — CSE</strong></li>
+  <li><strong>KIET Ghaziabad — CSE</strong></li>
+  <li><strong>ABES Ghaziabad — CSE</strong></li>
+  <li><strong>Chitkara — CSE</strong></li>
+  <li><strong>VIT Chennai/AP — CSE</strong></li>
+</ol>
+
+<h3>Tier D — Budget Safety</h3>
+<ol start="17">
+  <li><strong>HMRITM (IPU) — CSE</strong></li>
+  <li><strong>ADGITM (IPU) — CSE</strong></li>
+  <li><strong>GL Bajaj — CSE</strong></li>
+  <li><strong>DCRUST Murthal — CSE</strong> (if Haryana domicile)</li>
+  <li><strong>YMCA Faridabad — CSE</strong></li>
+</ol>
+</section>
+
+<!-- ============ PLACEMENTS ============ -->
+<section class="section" id="placements">
+<h2>Placement Reality Check</h2>
+<table>
+  <tr><th>Institute</th><th>Branch</th><th>Median LPA</th><th>Top LPA</th><th>% Placed</th><th>Key Recruiters</th></tr>
+  <tr><td>Thapar</td><td>CSE</td><td>10–13</td><td>40+</td><td>90%+</td><td>Google, Amazon, Microsoft, Goldman, Samsung</td></tr>
+  <tr><td>VIT Vellore</td><td>CSE</td><td>8–12</td><td>44+</td><td>90%+</td><td>Microsoft, Amazon, Cisco, VMware, Deloitte</td></tr>
+  <tr><td>Manipal MIT</td><td>CSE</td><td>9–12</td><td>43+</td><td>90%+</td><td>Amazon, Goldman, Samsung, Oracle, TCS Digital</td></tr>
+  <tr><td>JIIT Noida</td><td>CSE</td><td>8–11</td><td>30+</td><td>85–90%</td><td>Amazon, Samsung, Adobe, Paytm, TCS Digital</td></tr>
+  <tr><td>MAIT (IPU)</td><td>CSE</td><td>6–8</td><td>15–20</td><td>80%</td><td>TCS, Infosys, Wipro, Capgemini, HCL, some product cos</td></tr>
+  <tr><td>Bennett</td><td>CSE</td><td>6–9</td><td>20+</td><td>80–85%</td><td>TCS, Cognizant, Capgemini, Times Group network</td></tr>
+  <tr><td>SRM Chennai</td><td>CSE</td><td>6–9</td><td>30+</td><td>85%</td><td>Amazon, TCS, Infosys, Cognizant, Zoho</td></tr>
+  <tr><td>KIET/ABES</td><td>CSE</td><td>4–6</td><td>12–15</td><td>75%</td><td>TCS, Infosys, Wipro, Cognizant</td></tr>
+  <tr><td>Amity</td><td>CSE</td><td>4–6</td><td>20+</td><td>70%</td><td>Variable. Top 20% do well, rest average.</td></tr>
+  <tr><td>Galgotias/Sharda</td><td>CSE</td><td>3.5–5</td><td>10–12</td><td>60–70%</td><td>Service companies primarily.</td></tr>
+</table>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="section" id="timeline">
+<h2>Application Timeline — Key Deadlines</h2>
+<div class="callout danger">
+  <p><strong>🚨 Apply NOW for everything that's open. Don't wait for one result to start another.</strong></p>
+</div>
+<table>
+  <tr><th>What</th><th>When (Typical)</th><th>Status</th><th>Action</th></tr>
+  <tr><td>IPU CET Registration</td><td>March–May</td><td class="deadline">⏰ CHECK NOW</td><td>Register immediately if open.</td></tr>
+  <tr><td>VITEEE Exam</td><td>April–May</td><td class="deadline">⏰ MAY BE DONE</td><td>Check if late registration possible, or Phase 2.</td></tr>
+  <tr><td>MET (Manipal)</td><td>April–May</td><td class="deadline">⏰ CHECK</td><td>Apply on Manipal website.</td></tr>
+  <tr><td>SRMJEEE</td><td>April–June</td><td class="deadline">⏰ CHECK</td><td>Multiple phases. Late entry possible.</td></tr>
+  <tr><td>JIIT Application</td><td>Feb–July (rolling)</td><td><span class="v-safe">✅ OPEN</span></td><td>Apply now. Rounds continue through July.</td></tr>
+  <tr><td>Bennett Application</td><td>Feb–July (rolling)</td><td><span class="v-safe">✅ LIKELY OPEN</span></td><td>Apply now.</td></tr>
+  <tr><td>Thapar Application</td><td>March–July</td><td><span class="v-safe">✅ LIKELY OPEN</span></td><td>Apply now.</td></tr>
+  <tr><td>JAC Delhi Counselling</td><td>June–August</td><td>Upcoming</td><td>Register when portal opens (post JEE results).</td></tr>
+  <tr><td>IPU CET Exam</td><td>May–June</td><td>Upcoming</td><td>Must have registered.</td></tr>
+  <tr><td>IPU Counselling</td><td>July–August</td><td>Upcoming</td><td>After CET results.</td></tr>
+  <tr><td>AKTU Counselling</td><td>July–August</td><td>Upcoming</td><td>Register on AKTU portal post JEE results.</td></tr>
+  <tr><td>HSTES (Haryana)</td><td>July–August</td><td>Upcoming</td><td>If Haryana domicile. Register when open.</td></tr>
+  <tr><td>Amity / LPU / others</td><td>Year-round</td><td><span class="v-safe">✅ OPEN</span></td><td>Apply anytime. Rolling admissions.</td></tr>
+</table>
+</section>
+
+<!-- ============ TODOS ============ -->
+<section class="section" id="todos">
+<h2>Research TODOs</h2>
+<div class="callout">
+  <p><strong>📌 Open items for next iteration:</strong></p>
+  <ul>
+    <li>☐ Confirm exact top 20 percentile for student's board (CBSE / state board?)</li>
+    <li>☐ Confirm home state (for NIT HS quota via JoSAA if board % works out)</li>
+    <li>☐ Check Delhi domicile status (critical for JAC Delhi + IPU)</li>
+    <li>☐ IPU CET registration status — is it still open?</li>
+    <li>☐ VITEEE / MET / SRMJEEE — has registration closed?</li>
+    <li>☐ Exact JIIT scholarship slabs for 38K JEE rank</li>
+    <li>☐ Bennett BAT schedule if JEE not accepted directly</li>
+    <li>☐ PEC exact counselling process and dates for non-UT candidates</li>
+    <li>☐ Thapar 2025 cutoff data for CSE (AI&ML) specifically</li>
+    <li>☐ Any emerging Delhi NCR colleges (Plaksha, etc.)</li>
+  </ul>
+</div>
+</section>
+
+<div style="text-align:center;margin-top:40px;padding:20px;color:var(--text2);font-size:12px;border-top:1px solid var(--border)">
+  JEE Main ~38K College Guide — Non-JoSAA · Board 72% / Agg 60%<br>
+  Last updated: April 21, 2026 · Data: 2024–25 cycles<br>
+  For reference only. Verify all data on official portals before submission.
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const h=a.getAttribute('href');
+    if(h&&h.startsWith('#')){e.preventDefault();document.querySelector(h)?.scrollIntoView({behavior:'smooth'});
+    document.querySelectorAll('.sidebar a').forEach(x=>x.classList.remove('active'));a.classList.add('active')}
+  });
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;
+  document.querySelectorAll('.sidebar a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+id)})}});
+},{threshold:.3});
+document.querySelectorAll('.section').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
